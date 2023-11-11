@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAV</title>
+    <!-- Incluindo CSS Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-pzjw8w+ua6GJJ9O3e1pIQf5F5OpaW60aiJaUup+GhqS8JQ6qDYgCeFExlEVmW8bX"
+        crossorigin="anonymous">
+    <!-- Incluindo fonte Quicksand -->
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- Incluindo CSS personalizado -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+ <!-- Container principal -->
+    <div class="container-expand-lg">
+        <!-- Linha para o menu -->
+        <div class="menu menu-horizontal justify-content-center">
+            <!-- Coluna para o botão de configurações -->
+            <button id="btnConfig" class="btn btn-menu mx-3">
+                <i class="fas fa-user-cog"></i>
+            </button>
+            
+            <button id="btnHome" class="btn btn-menu mx-3">
+                <i class="fas fa-home"></i>
+            </button>
+            
+            <button id="btnCalendario" id="mesAtual" class="btn btn-menu">
+                <i class="bi bi-calendar-check-fill"></i>
+                <span class="mes-text">Novembro</span>
+                <i class='fas fa-calendar-check'></i>
+            </button>
+            
+            
+        </div>
+        <!-- Fim do menu -->
+    </div>
+    <!-- codigo de vcs-->
+
+    <div>
+
+    
+
+    <!-- Bibliotecas jQuery e Bootstrap JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-EIkY4waF+8FBH/h6cxfzntOW7c0MDAdoox9xEq+6yvq49Mw5fPeWjC+E7HcGTz6p"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-pzjw8w+ua6GJJ9O3e1pIQf5F5OpaW60aiJaUup+GhqS8JQ6qDYgCeFExlEVmW8bX"
+        crossorigin="anonymous"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                // Array com os nomes dos meses
+                const meses = [
+                    "Janeiro", "Fevereiro", "Março", "Abril",
+                    "Maio", "Junho", "Julho", "Agosto",
+                    "Setembro", "Outubro", "Novembro", "Dezembro"
+                ];
+        
+                // Selecione o elemento do botão do mês
+                const botaoMes = document.getElementById("mesAtual");
+        
+                // Obtenha a data atual
+                const dataAtual = new Date();
+        
+                // Obtenha o mês da data atual (0-11)
+                const mes = dataAtual.getMonth();
+        
+                // Atualize o texto do botão do mês com o mês atual
+                botaoMes.querySelector("span").textContent = meses[mes];
+            });
+
+            // Adicionar eventos de clique aos botões
+        btnConfig.addEventListener("click", function () {
+            
+            // Redirecionar para a página de configurações
+            window.location.href = "configuracoes.html";
+        });
+
+        btnHome.addEventListener("click", function () {
+            // Redirecionar para a página inicial
+            window.location.href = "pagina_home.html";
+        });
+        btnCalendario.addEventListener("click", function () {
+            // Redirecionar para a página do calendário
+            window.location.href = "pagina_calendario.html";
+        });
+</script>
+
+        
+</body>
+
+</html>
